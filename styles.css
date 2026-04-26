@@ -252,6 +252,15 @@ body {
   text-align: right;
 }
 
+.cart-summary .btn {
+  margin-top: 0.75rem;
+}
+
+.btn.disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
 .faq-list {
   margin-top: 1rem;
   display: grid;

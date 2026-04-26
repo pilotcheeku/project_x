@@ -186,12 +186,17 @@ function renderProductDetails() {
 function renderCartPage() {
   const list = document.getElementById("cartItems");
   const totalEl = document.getElementById("cartTotal");
+  const buyNowBtn = document.getElementById("buyNowBtn");
   if (!list || !totalEl) return;
 
   const cart = getCart();
   if (!cart.length) {
     list.innerHTML = `<div class="card"><p>Your cart is empty. Explore products and add your gear!</p></div>`;
     totalEl.textContent = formatPrice(0);
+    if (buyNowBtn) {
+      buyNowBtn.classList.add("disabled");
+      buyNowBtn.removeAttribute("href");
+    }
     return;
   }
 
@@ -220,6 +225,10 @@ function renderCartPage() {
     .join("");
 
   totalEl.textContent = formatPrice(total);
+  if (buyNowBtn) {
+    buyNowBtn.classList.remove("disabled");
+    buyNowBtn.setAttribute("href", `billing.html?total=${total}`);
+  }
 }
 
 function setupFAQ() {
@@ -286,6 +295,57 @@ function setupAuth() {
   });
 }
 
+function setupBillingPage() {
+  const billingForm = document.getElementById("billingForm");
+  const totalInput = document.getElementById("billingTotal");
+  const nameInput = document.getElementById("billingName");
+  const upiInput = document.getElementById("billingUpi");
+  const buyConfirmation = document.getElementById("buyConfirmation");
+  const billingMsg = document.getElementById("billingMsg");
+  if (
+    !billingForm ||
+    !(totalInput instanceof HTMLInputElement) ||
+    !(nameInput instanceof HTMLInputElement) ||
+    !(upiInput instanceof HTMLInputElement) ||
+    !(buyConfirmation instanceof HTMLSelectElement) ||
+    !billingMsg
+  ) {
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const total = Number(params.get("total")) || 0;
+  totalInput.value = formatPrice(total);
+
+  const currentUser = JSON.parse(localStorage.getItem("sports_current_user") || "null");
+  if (currentUser?.name) {
+    nameInput.value = currentUser.name;
+  }
+
+  billingForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const upiValue = upiInput.value.trim();
+
+    if (!nameInput.value.trim() || !upiValue.includes("@")) {
+      billingMsg.textContent = "Please enter a valid name and UPI ID.";
+      billingMsg.className = "helper-text error-text";
+      return;
+    }
+
+    if (buyConfirmation.value !== "yes") {
+      billingMsg.textContent = "Select 'Yes, Buy' to complete your order.";
+      billingMsg.className = "helper-text error-text";
+      return;
+    }
+
+    localStorage.removeItem("sports_cart");
+    updateCartCount();
+    billingMsg.textContent = "Payment successful. Your order is completed.";
+    billingMsg.className = "helper-text success-text";
+    alert("Order completed");
+  });
+}
+
 function setupGlobalClicks() {
   document.addEventListener("click", (event) => {
     const target = event.target;
@@ -347,6 +407,7 @@ function init() {
   renderCartPage();
   setupFAQ();
   setupAuth();
+  setupBillingPage();
   setupMobileMenu();
   setupGlobalClicks();
   setupProductNavigationFromText();

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportSphere | Billing</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="logo" href="index.html">SportSphere</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Catalog</a></li>
+          <li><a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a></li>
+          <li><a href="billing.html" class="active">Billing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="auth.html">Sign Up / Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="section container">
+      <h1>Billing Details</h1>
+      <form id="billingForm" class="card auth-card">
+        <label for="billingName">Name</label>
+        <input id="billingName" class="input" type="text" placeholder="Enter your name" required />
+
+        <label for="billingUpi">UPI ID</label>
+        <input id="billingUpi" class="input" type="text" placeholder="name@bank" required />
+
+        <label for="billingTotal">Total Amount</label>
+        <input id="billingTotal" class="input" type="text" readonly />
+
+        <label for="buyConfirmation">Do you want to buy?</label>
+        <select id="buyConfirmation" class="input" required>
+          <option value="no">No</option>
+          <option value="yes">Yes, Buy</option>
+        </select>
+
+        <button class="btn primary" type="submit">Place Order</button>
+        <p id="billingMsg" class="helper-text"></p>
+      </form>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
