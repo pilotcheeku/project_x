@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportSphere | Sign Up / Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="logo" href="index.html">SportSphere</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Catalog</a></li>
+          <li><a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="auth.html" class="active">Sign Up / Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="section container">
+      <h1>Account Access</h1>
+      <div class="auth-grid">
+        <form id="signupForm" class="card auth-card">
+          <h2>Sign Up</h2>
+          <label>Name</label>
+          <input class="input" type="text" id="signupName" required />
+          <label>Email</label>
+          <input class="input" type="email" id="signupEmail" required />
+          <label>Password</label>
+          <input class="input" type="password" id="signupPassword" minlength="6" required />
+          <button class="btn primary" type="submit">Create Account</button>
+          <p id="signupMsg" class="helper-text"></p>
+        </form>
+
+        <form id="loginForm" class="card auth-card">
+          <h2>Login</h2>
+          <label>Email</label>
+          <input class="input" type="email" id="loginEmail" required />
+          <label>Password</label>
+          <input class="input" type="password" id="loginPassword" required />
+          <button class="btn primary" type="submit">Login</button>
+          <p id="loginMsg" class="helper-text"></p>
+        </form>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

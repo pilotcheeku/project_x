@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportSphere | Products</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="logo" href="index.html">SportSphere</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Catalog</a></li>
+          <li><a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="auth.html">Sign Up / Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="section container">
+      <h1>Product Catalog</h1>
+      <div class="filters-row">
+        <input
+          id="searchInput"
+          type="text"
+          class="input"
+          placeholder="Search sports equipment..."
+        />
+        <select id="categoryFilter" class="input">
+          <option value="All">All Categories</option>
+          <option value="Cricket">Cricket</option>
+          <option value="Football">Football</option>
+          <option value="Basketball">Basketball</option>
+          <option value="Badminton">Badminton</option>
+          <option value="Fitness">Fitness</option>
+        </select>
+        <select id="sortFilter" class="input">
+          <option value="default">Sort by</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+        </select>
+      </div>
+      <div id="productsGrid" class="products-grid"></div>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

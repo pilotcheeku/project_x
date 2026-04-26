@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportSphere | Product Details</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="logo" href="index.html">SportSphere</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Catalog</a></li>
+          <li><a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="auth.html">Sign Up / Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="section container">
+      <div id="productDetail"></div>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

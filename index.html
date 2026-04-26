@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportSphere | Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="logo" href="index.html">SportSphere</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Catalog</a></li>
+          <li><a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="auth.html">Sign Up / Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <h1>Gear Up For Your Next Win</h1>
+          <p>
+            Premium sports equipment in India. Shop cricket, football, fitness,
+            and more at great prices.
+          </p>
+          <a href="products.html" class="btn primary">Shop Now</a>
+        </div>
+      </section>
+
+      <section class="section container">
+        <div class="section-heading">
+          <h2>Featured Products</h2>
+          <a href="products.html" class="text-link">View all products</a>
+        </div>
+        <div id="featuredProducts" class="products-grid"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
