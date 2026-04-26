@@ -1,0 +1,121 @@
+# OS and file explorer
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Personal folders (home directory repo)
+Application Data/
+AppData/
+Cookies/
+Contacts/
+Documents/
+Downloads/
+Favorites/
+IntelGraphicsProfiles/
+Local Settings/
+Links/
+Music/
+My Documents/
+NetHood/
+OneDrive/
+PrintHood/
+Recent/
+Saved Games/
+SendTo/
+Searches/
+Start Menu/
+Templates/
+Videos/
+.lunarclient/
+.openjfx/
+.room/
+*.DAT
+*.dat
+*.blf
+*.regtrans-ms
+ntuser.ini
+ntuser.dat.LOG*
+
+# Logs and runtime dumps
+*.log
+*.out
+*.err
+*.pid
+*.stackdump
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and local-only config
+.env
+.env.*
+*.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+*.swp
+*.swo
+*~
+
+# Dependencies / package managers
+node_modules/
+bower_components/
+.pnpm-store/
+.yarn/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+ENV/
+
+# Java / Gradle
+.gradle/
+build/
+out/
+*.class
+
+# .NET
+bin/
+obj/
+
+# Go / Rust
+target/
+coverage.out
+
+# Caches and temporary
+.cache/
+.tmp/
+tmp/
+temp/
+*.tmp
+
+# Archives and large generated files
+*.zip
+*.tar
+*.gz
+*.7z
+
+# Cursor and local tooling metadata
+.cursor/
+.cursor/projects/
+
+# Machine/user specific dotfiles
+.gitconfig
+
