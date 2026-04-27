@@ -1,0 +1,3 @@
+User-agent:*
+Allow:/
+Sitemap: https://sportsphere420.netlify.app
